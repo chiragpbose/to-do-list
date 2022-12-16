@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>todos</h1>
+		<div class="todo-container">
+			<div class="todo-head">
+				<!-- <button class="complete-all">complete all</button> -->
+				<input id="toggle-all" class="toggle-all" type="checkbox" name="" />
+				<label for="toggle-all" id="toggle-all"></label>
+
+				<div class="todo-form">
+					<!--you type in the task here-->
+					<form action="">
+						<input
+							type="text"
+							class="new-todo-list"
+							placeholder="What needs to be done?"
+							name=""
+							id=""
+						/>
+					</form>
+				</div>
+			</div>
+			<div class="todo-list">
+				<!--all tasks get listed here-->
+				<!-- <div class="taskDiv1">
+                    <input type="checkbox" name="task1" id="task">
+                    <label for="task1" id="task">dfs</label>
+                    <button class="delete" id="delete1">delete</button>
+                    <hr>
+                </div> -->
+			</div>
+			<div class="todo-list-options">
+				<div class="items-left">0 items left</div>
+				<div class="category-buttons">
+					<button class="all">show all</button>
+					<button class="active">show active</button>
+					<button class="completed">show completed</button>
+                    <button class="clear-completed">clear completed</button>
+				</div>
+			</div>
+		</div>
+		<div class="extra-comment">
+			<p>double-click to edit a todo</p>
+		</div>
+	</body>
+	<script src="app.js"></script>
+</html>

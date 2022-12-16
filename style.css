@@ -1,0 +1,60 @@
+* {
+	box-sizing: border-box;
+	font-family: inherit;
+}
+body {
+	margin: 0;
+	font-weight: 300;
+	font-family: "Work Sans", sans-serif;
+	background-color: rgb(255, 246, 246);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.todo-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid black;
+	width: 80%;
+	background-color: antiquewhite;
+}
+.todo-head {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.todo-list {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.todo-list-options {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+.task {
+	margin: 5px;
+	/* text-decoration: line-through; */
+}
+input[type=checkbox]:checked + label {
+    color:red;
+    text-decoration: line-through;
+}
+/* #task-1 {
+	text-decoration: line-through;
+} 
+*/
+hr {
+	margin-bottom: 0;
+}
+.clear-completed{
+	display: none;
+}
+.extra-comment {
+	margin-top: 100px;
+}
