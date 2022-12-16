@@ -20,15 +20,18 @@ function addTask(e) {
 		newLabel.htmlFor = "task" + count;
 		newLabel.id = "task";
 		newLabel.innerText = input.value;
+
 		newDiv.append(newLabel);
 		let newButton = document.createElement("button");
 		newButton.classList.add("delete");
 		newButton.id = "delete" + count;
 		newButton.innerText = "delete";
 		newDiv.appendChild(newButton);
-		let newHr = document.createElement("hr");
-		newDiv.appendChild(newHr);
-		input.value="";
+		
+		if (newLabel.innerText === "") {
+			newLabel.parentElement.remove();
+		}
+		input.value = "";
 	}
 }
 
@@ -99,6 +102,41 @@ function clearCompletedButtonfn(e) {
 	newInputs.forEach((input) => {
 		if (input.checked) {
 			input.parentElement.remove();
+		}
+	});
+}
+
+let showAllBtn = document.querySelector(".all");
+showAllBtn.addEventListener("click", showAllBtnFn);
+function showAllBtnFn(e) {
+	newInputs = document.querySelectorAll("input#task");
+	newInputs.forEach((input) => {
+		input.parentElement.style.display = "flex";
+	});
+}
+
+let showActiveBtn = document.querySelector(".active");
+showActiveBtn.addEventListener("click", showActiveBtnFn);
+function showActiveBtnFn(e) {
+	newInputs = document.querySelectorAll("input#task");
+	newInputs.forEach((input) => {
+		if (input.checked) {
+			input.parentElement.style.display = "none";
+		} else {
+			input.parentElement.style.display = "flex";
+		}
+	});
+}
+
+let showCompletedBtn = document.querySelector(".completed");
+showCompletedBtn.addEventListener("click", showCompletedBtnFn);
+function showCompletedBtnFn(e) {
+	newInputs = document.querySelectorAll("input#task");
+	newInputs.forEach((input) => {
+		if (!input.checked) {
+			input.parentElement.style.display = "none";
+		} else {
+			input.parentElement.style.display = "flex";
 		}
 	});
 }
