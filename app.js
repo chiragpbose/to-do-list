@@ -27,7 +27,7 @@ function addTask(e) {
 		newButton.id = "delete" + count;
 		newButton.innerText = "delete";
 		newDiv.appendChild(newButton);
-		
+
 		if (newLabel.innerText === "") {
 			newLabel.parentElement.remove();
 		}
