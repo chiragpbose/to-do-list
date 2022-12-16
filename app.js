@@ -55,6 +55,7 @@ let todolist = document.querySelector(".todo-list");
 todolist.addEventListener("click", deleteTask);
 todolist.addEventListener("click", findCountOfUncheckedTasks);
 todolist.addEventListener("click", clearCompletedButtonDisplayFn);
+todolist.addEventListener("dblclick", dblClickEditFn);
 
 function deleteTask(e) {
 	//console.log(e.target.nodeName);
@@ -139,4 +140,30 @@ function showCompletedBtnFn(e) {
 			input.parentElement.style.display = "flex";
 		}
 	});
+}
+
+let temp = "";
+function dblClickEditFn(e) {
+	if (e.target.nodeName === "LABEL") {
+		temp = e.target.innerText;
+		e.target.innerText = "";
+		let inputEditor = document.createElement("input");
+		inputEditor.type = "text";
+		inputEditor.classList.add("editing-todo");
+		inputEditor.value = temp;
+		e.target.append(inputEditor);
+	}
+}
+inputEditor = document.querySelector(".editing-todo");
+todolist.addEventListener("keypress", finishEditingfn);
+function finishEditingfn(e) {
+	if (e.target.nodeName === "INPUT") {
+		if (e.keyCode == 13) {
+			e.preventDefault();
+			// console.log(e.target.value);
+			e.target.parentElement.innerText = e.target.value;
+			// e.target.style.display = "none";
+			e.target.remove()
+		}
+	}
 }
